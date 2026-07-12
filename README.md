@@ -1,2 +1,3 @@
-### 🔗 https://khasarah.github.io/dmb-timer/
-> Just my personal Demobilization Countdown
+# DMB-Timer
+
+Личный таймер обратного отсчёта до ДМБ с переключением в режим «суткомера» и историей значимых дат службы.

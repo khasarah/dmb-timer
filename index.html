@@ -2,6 +2,26 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+	<meta name="theme-color" content="#141424">
+	<meta name="robots" content="noindex, nofollow">
+
+	<meta name="description" content="Личный обратный отсчёт до ДМБ — с историей значимых дат службы.">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="DMB-Timer • @Khasarah">
+	<meta property="og:description" content="Обратный отсчёт до дембеля. Осталось меньше, чем кажется.">
+	<meta property="og:image" content="./media/icons8-ak.png">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="DMB-Timer • @Khasarah">
+	<meta name="twitter:description" content="Обратный отсчёт до дембеля. Осталось меньше, чем кажется.">
+	<meta name="twitter:image" content="./media/icons8-ak.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="DMB-Timer">
+	<link rel="apple-touch-icon" href="./media/icons8-ak.png">
+	<link rel="manifest" href="site.webmanifest">
+
+	<link type="image/png" sizes="96x96" rel="icon" href="./media/icons8-ak.png">
 	<title>DMB-Timer • @Khasarah</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -9,18 +29,50 @@
 	<content class="screen">
 		<span id="background"></span>
 		<div class="overlay"></div>
+
 		<div class="clock" id="clock">
-			<span class="clock__header">- Left • <span id="clock__percentage">100%</span> • Until -</span>
+			<span class="clock__header">- <label class="mode-toggle" for="mode-toggle">
+				<input type="checkbox" id="mode-toggle" class="mode-toggle__input">
+
+				<span class="mode-toggle__bracket mode-toggle__bracket--outer-l">&lt;</span>
+				<span class="mode-toggle__word mode-toggle__word--left">left</span>
+				<span class="mode-toggle__prep mode-toggle__prep--left">until</span>
+				<span class="mode-toggle__bracket mode-toggle__bracket--mid-l">&gt;</span>
+
+				<span class="mode-toggle__percentage" id="clock__percentage">100%</span>
+
+				<span class="mode-toggle__bracket mode-toggle__bracket--mid-r">&lt;</span>
+				<span class="mode-toggle__word mode-toggle__word--right">passed</span>
+				<span class="mode-toggle__prep mode-toggle__prep--right">since</span>
+				<span class="mode-toggle__bracket mode-toggle__bracket--outer-r">&gt;</span>
+			</label> -</span>
 			<div class="clock__time" id="timer">
-				<span id="days">000</span><span class="clock__until">d</span>
-				<span id="hours">00</span><span class="clock__until">h</span>
-				<span id="minutes">00</span><span class="clock__until">m</span>
-				<span id="seconds">00</span><span class="clock__until">s</span>
+				<span class="clock__digits" id="clock__digits">
+					<span id="days">282</span><span class="clock__unit">d</span>
+					<span id="hours">00</span><span class="clock__unit">h</span>
+					<span id="minutes">00</span><span class="clock__unit">m</span>
+					<span id="seconds">00</span><span class="clock__unit">s</span>
+				</span>
+				<span class="clock__arrived" id="clock__arrived" hidden>WE GO HOME</span>
 			</div>
-			<p class="clock__footer">- 16 april 2027 -</p>
+			<p class="clock__footer" id="clock__footer">- 16 april 2027 -</p>
+
+			<div class="history" id="history">
+				<div class="history__frame">
+					<div class="history__scroll" id="history-scroll"></div>
+				</div>
+			</div>
 		</div>
-		<p class="tag">- Timer until @khasarah returns -</p>
+		<footer class="footer">
+			<p class="tag">- Timer until @khasarah returns -</p>
+			<div class="footer__meta">
+				<a class="footer__credit" href="https://claude.ai" target="_blank" rel="noopener noreferrer">Vibe-coded via Claude Sonnet 5</a>
+				<span class="footer__divider">·</span>
+				<a class="footer__credit" href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons by Icons8</a>
+			</div>
+		</footer>
 	</content>
+	<script src="const_data.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>
